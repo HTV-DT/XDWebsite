@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from './Slider';
-import About from './About';
+import About from './Slider/About';
 
 function Main({ children }) {
     return (

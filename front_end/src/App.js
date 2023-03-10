@@ -1,8 +1,10 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {  Router, Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/material';
 import DefaultLayout from './components/layouts/DefaultLayout';
 import * as routes from '~/routes';
+import Checkout from './pages/Checkout';
+import { Check } from '@mui/icons-material';
 
 function App() {
     const user = true;
@@ -24,12 +26,22 @@ function App() {
                                               <Page />
                                           </Layout>
                                       }
-                                  />
+                                  /> 
+                               
+                               
+                                    
+                            
+                                  
                               );
+                              
                           })
-                        : //<Route path="/" element={<Login />} />
+                        : 
+                     
+                        
+                        //<Route path="/" element={<Login />} />
                           null}
                 </Routes>
+                        
             </Container>
         </div>
     );

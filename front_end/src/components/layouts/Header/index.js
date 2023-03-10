@@ -15,15 +15,26 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Navbar from './Navbar';
 import NavMobile from './Navbar/NavMobile';
-
+import classNames from 'classnames/bind';
+import Cart from './Cart';
 const menuId = 'primary-search-account-menu';
 const mobileMenuId = 'primary-search-account-menu-mobile';
 
+
 function Header({ ...props }) {
+
+    //Gio hang
+     const [openCart,setOpenCart] = useState(false);
+
+
+
+
     const { titlePages } = props;
 
 
@@ -45,8 +56,11 @@ function Header({ ...props }) {
     const handleMobileMenuOpen = () => {};
 
     return (
+                                       
         <React.Fragment>
+         
             <AppBar position="sticky" color="inherit">
+                      {openCart&&<Cart closeCart ={setOpenCart}></Cart>}
                 <Toolbar>
                     <Grid container spacing={4}>
                         <Grid item xs>
@@ -106,9 +120,17 @@ function Header({ ...props }) {
                                     >
                                         Sản phẩm yêu thích
                                     </Typography>
-                                    <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+
+                                    <IconButton size="large" aria-label="show 4 new mails" color="inherit" onClick={()=>{
+                                                setOpenCart(true);
+                                            }} > 
                                         <Badge badgeContent={4} color="error">
+                                       
                                             <ShoppingBagIcon />
+                                     
+                                 
+                                 
+                                         
                                         </Badge>
                                     </IconButton>
                                     <IconButton

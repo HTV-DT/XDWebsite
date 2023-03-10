@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
+import Cart from '../Header/Cart';
+import { useState } from 'react';
 
 const titlePages = [
     { id: '', title: 'Trang chủ' },
@@ -14,8 +16,10 @@ const titlePages = [
 ];
 
 function DefaultLayout({ children, props }) {
-    return (
+
+    return (  
         <>
+                
             <Header titlePages={titlePages} />
             <Main>{children}</Main>
             <Footer />
