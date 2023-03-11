@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classNames from "classnames/bind";
 import styles from "./cart.module.scss";
 import { width } from '@mui/system';
+import { Modal } from '@mui/material';
 
 
 
 const cx = classNames.bind(styles);
+const cartmodal = (e)=>{
+    e.stopPropagation();
+}
 function Cart({closeCart}) {
+    const cartt=useRef();
+    console.log(cartt);
   return (
-
-    <div className={cx('cart-container')}>
+  
+    <div className={cx('modal')} onClick={()=>closeCart(false)}> 
+    <div className={cx('cart-container')} onClick={cartmodal} ref={cartt} >
+       
         <div className={cx('cart-modal')}>
        
             <div className={cx('cart-header')}> 
             <div className={cx('title-cart')}> <h2>Giỏ hàng</h2></div>
-             <div className={cx('close')} onClick={()=>closeCart(false)}> Đóng</div>
+             <div className={cx('close')} onClick={()=>closeCart(false )}> Đóng</div>
       </div>
       
     
@@ -42,12 +50,12 @@ function Cart({closeCart}) {
             </div>
         </div>
         <div>Các loại chi phí khác được tính trong phần thanh toán</div>
-        <div><button>Thanh toán</button></div>
+        <div className={cx('btn-cart')}><button>Thanh toán</button></div>
         </div>
        
 
     </div>
-
+    </div>
   )
 }
 

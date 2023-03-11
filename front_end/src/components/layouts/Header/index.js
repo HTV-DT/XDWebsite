@@ -56,11 +56,12 @@ function Header({ ...props }) {
     const handleMobileMenuOpen = () => {};
 
     return (
-                                       
+        
+                          
         <React.Fragment>
-         
+           {openCart&&<Cart closeCart ={setOpenCart}></Cart>}   
             <AppBar position="sticky" color="inherit">
-                      {openCart&&<Cart closeCart ={setOpenCart}></Cart>}
+                    
                 <Toolbar>
                     <Grid container spacing={4}>
                         <Grid item xs>
