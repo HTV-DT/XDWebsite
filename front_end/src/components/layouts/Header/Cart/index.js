@@ -3,6 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./cart.module.scss";
 import { width } from '@mui/system';
 import { Modal } from '@mui/material';
+import { number } from 'yup';
 
 
 
@@ -36,7 +37,7 @@ function Cart({closeCart}) {
             <div>Tên sản phẩm</div>
             <div>size</div>
             <div>
-                <div>số lượng</div>
+                <div>  -  <input style={{border:'none',width:'20px'}} type={number} value={ 1 }></input> + </div>
             </div></div>
         </div>
         </div>
@@ -49,7 +50,7 @@ function Cart({closeCart}) {
                 365.000 VNĐ
             </div>
         </div>
-        <div>Các loại chi phí khác được tính trong phần thanh toán</div>
+        <div className={cx('des-cart')}>Các loại chi phí khác được tính trong phần thanh toán</div>
         <div className={cx('btn-cart')}><button>Thanh toán</button></div>
         </div>
        
